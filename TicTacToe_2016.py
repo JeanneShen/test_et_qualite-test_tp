@@ -1,6 +1,6 @@
 # Pam Qian 2016 Fall CS 112 Python Midterm Project II
 # Tic Tack Toe 
-
+name = "Player"
 def intro():
 # This function introduces the rules of the game Tic Tac Toe
     print("Hello! Welcome to Pam's Tic Tac Toe game!")
@@ -47,7 +47,7 @@ def startgamming(board, symbol_1, symbol_2, count):
         player = symbol_1
     elif count % 2 == 1:
         player = symbol_2
-    print("Player "+ player + ", it is your turn. ")
+    print(name+ player + ", it is your turn. ")
     row = int(input("Pick a row:"
                     "[upper row: enter 0, middle row: enter 1, bottom row: enter 2]:"))
     column = int(input("Pick a column:"
@@ -95,7 +95,7 @@ def isfull(board, symbol_1, symbol_2):
                 print("There is a tie. ")
 
         # Check if here is a winner
-        winner = isWinner(board, symbol_1, symbol_2, count)
+        winner = iswinner(board, symbol_1, symbol_2)
         count += 1
     if winner == False:
         print("Game over.")
@@ -123,45 +123,45 @@ def printpretty(board):
 
 
 
-def isWinner(board, symbol_1, symbol_2, count):
+def iswinner(board, symbol_1, symbol_2):
 # This function checks if any winner is winning
     winner = True
     # Check the rows
     for row in range (0, 3):
         if (board[row][0] == board[row][1] == board[row][2] == symbol_1):
             winner = False
-            print("Player " + symbol_1 + ", you won!")
+            print(name + symbol_1 + ", you won!")
    
         elif (board[row][0] == board[row][1] == board[row][2] == symbol_2):
             winner = False
-            print("Player " + symbol_2 + ", you won!")
+            print(name+ symbol_2 + ", you won!")
             
             
     # Check the columns
     for col in range (0, 3):
         if (board[0][col] == board[1][col] == board[2][col] == symbol_1):
             winner = False
-            print("Player " + symbol_1 + ", you won!")
+            print(name + symbol_1 + ", you won!")
         elif (board[0][col] == board[1][col] == board[2][col] == symbol_2):
             winner = False
-            print("Player " + symbol_2 + ", you won!")
+            print(name + symbol_2 + ", you won!")
 
     # Check the diagonals
     if board[0][0] == board[1][1] == board[2][2] == symbol_1:
         winner = False 
-        print("Player " + symbol_1 + ", you won!")
+        print(name + symbol_1 + ", you won!")
 
     elif board[0][0] == board[1][1] == board[2][2] == symbol_2:
         winner = False
-        print("Player " + symbol_2 + ", you won!")
+        print(name + symbol_2 + ", you won!")
 
     elif board[0][2] == board[1][1] == board[2][0] == symbol_1:
         winner = False
-        print("Player " + symbol_1 + ", you won!")
+        print(name + symbol_1 + ", you won!")
 
     elif board[0][2] == board[1][1] == board[2][0] == symbol_2:
         winner = False
-        print("Player " + symbol_2 + ", you won!")
+        print(name + symbol_2 + ", you won!")
 
     return winner
     
