@@ -114,7 +114,6 @@ def outofboard():
 def printpretty(board):
 # This function prints the board nice!
     rows = len(board)
-    cols = len(board)
     print("---+---+---")
     for r in range(rows):
         print(board[r][0], " |", board[r][1], "|", board[r][2])
@@ -175,11 +174,11 @@ def report(count, winner, symbol_1, symbol_2):
 
 def main():
 # The main function
-    introduction = intro()
+    intro()
     board = create_grid()
-    pretty = printpretty(board)
+    printpretty(board)
     symbol_1, symbol_2 = sym()
-    full = isfull(board, symbol_1, symbol_2) # The function that starts the game is also in here.
+    isfull(board, symbol_1, symbol_2) # The function that starts the game is also in here.
   
 
 
