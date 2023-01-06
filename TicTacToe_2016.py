@@ -86,8 +86,8 @@ def isfull(board, symbol_1, symbol_2):
     winner = True
 # This function check if the board is full
     while count < 10 and winner == True:
-        gaming = startgamming(board, symbol_1, symbol_2, count)
-        pretty = printpretty(board)
+        startgamming(board, symbol_1, symbol_2, count)
+        printpretty(board)
         
         if count == 9:
             print("The board is full. Game over.")
